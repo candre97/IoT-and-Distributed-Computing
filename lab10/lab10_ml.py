@@ -54,13 +54,8 @@ from pyspark.mllib.tree import DecisionTree, DecisionTreeModel
 from pyspark.mllib.util import MLUtils
 
 # Load and parse the data file into an RDD of LabeledPoint.
-testData = MLUtils.loadLibSVMFile(sc, 'path')
-trainingData = MLUtils.loadLibSVMFile(sc, 'path')
-
-
-
-# Split the data into training and test sets (30% held out for testing)
-(trainingData, testData) = data.randomSplit([0.7, 0.3])
+testData = MLUtils.loadLibSVMFile(sc, 'path')           #specify paths...
+trainingData = MLUtils.loadLibSVMFile(sc, 'path')       #specify paths...
 
 # Train a DecisionTree model.
 #  Empty categoricalFeaturesInfo indicates all features are continuous.
